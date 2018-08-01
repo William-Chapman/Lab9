@@ -36,5 +36,28 @@ namespace Lab9
             set { price = value; }
             get { return price; }
         }
+
+        public Car()
+        {
+            Make = "Unknown";
+            Model = "Unknown";
+            Year = 1111;
+            Price = 11.11;
+        }
+
+        public Car(string ma, string mo, int y, double p)
+        {
+            Make = ma;
+            Model = mo;
+            Year = y;
+            Price = p;
+        }
+
+        public virtual void PrintInfo()
+        {
+            const string format = "{0, -10} {1, -10} {2, -10} {3, -10}";
+            Console.WriteLine(string.Format(format, "Make", "Model", "Year", "Price"));
+            Console.WriteLine(string.Format(format, Make, Model, Year, $"${Price}"));
+        }
     }
 }

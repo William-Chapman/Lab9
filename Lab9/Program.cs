@@ -13,24 +13,29 @@ namespace Lab9
 
         static void Main()
         {
+            CarApp.InitList(cars);
+
             do
             {
-                if(cars.Count == 0)
-                {
-                    Console.WriteLine("Please add a car and its information.");
-                    CarApp.AddListing(cars);
-                }
                 string addOrLearn = CarApp.Ask("Would you like to add a car or read the information about one? (add/read)", @"^\b(add|read)\b$", "Please choose a proper option.").ToLower();
                 if(addOrLearn == "add")
                 {
+                    Console.WriteLine("Please add a car and its information.");
                     CarApp.AddListing(cars);
                 }
                 else if(addOrLearn == "read")
                 {
                     CarApp.WriteInfo(cars);
                     int userNum = CarApp.Ask("Which car would you like to know about (enter a number).", cars.Count, $"Please be sure you enter a number between 1 and {cars.Count}");
-                    CarApp.WriteInfo(cars, userNum);
+                    cars[userNum - 1].PrintInfo();
+                    Console.WriteLine("Would you like to buy this car? (yes/no)");
+                    if(Console.ReadLine() == "yes")
+                    {
+                        cars.Remove(cars[userNum - 1]);
+                    }
+                    CarApp.WriteInfo(cars);
                 }
+
             }
             while (Continue() == 1);
         }
