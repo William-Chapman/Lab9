@@ -31,7 +31,7 @@ namespace Lab9
         {
             const string format = "{0, -10} {1, -10} {2, -10} {3, -10} {4, -10}";
             Console.WriteLine(string.Format(format, "Make", "Model", "Year", "Price", "Milage"));
-            Console.WriteLine(string.Format(format, Make, Model, Year, $"${Price}", Milage));
+            Console.WriteLine(string.Format(format, Make, Model, Year, $"${Price:c}", Milage));
         }
     }
 }

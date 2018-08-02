@@ -124,54 +124,5 @@ namespace Lab9
             }
             while (choice == "y" || choice == "yes");
         }
-
-        public static void InitList(List<Car> cars)
-        {
-            Car n1 = new Car();
-            n1.Make = "Tesla";
-            n1.Model = "Model S";
-            n1.Year = 2018;
-            n1.Price = 165000;
-
-            Car n2 = new Car();
-            n2.Make = "Dodge";
-            n2.Make = "Demon";
-            n2.Year = 2018;
-            n2.Price = 84000;
-
-            Car n3 = new Car();
-            n3.Make = "DF";
-            n3.Model = "Goblin";
-            n3.Year = 2018;
-            n3.Price = 15000;
-
-            UsedCar u1 = new UsedCar();
-            u1.Make = "Chevy";
-            u1.Model = "Impala";
-            u1.Year = 2008;
-            u1.Price = 2000;
-            u1.Milage = 150000;
-
-            UsedCar u2 = new UsedCar();
-            u2.Make = "Jeep";
-            u2.Model = "Wrangler";
-            u2.Year = 2016;
-            u2.Price = 15000;
-            u2.Milage = 65000;
-
-            UsedCar u3 = new UsedCar();
-            u3.Make = "GMC";
-            u3.Model = "Astro";
-            u3.Year = 2005;
-            u3.Price = 500;
-            u3.Milage = 300000;
-
-            cars.Add(n1);
-            cars.Add(u1);
-            cars.Add(n2);
-            cars.Add(u2);
-            cars.Add(n3);
-            cars.Add(u3);
-        }
     }
 }

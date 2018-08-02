@@ -9,11 +9,9 @@ namespace Lab9
 {
     class Program
     {
-        static List<Car> cars = new List<Car>();
-
         static void Main()
         {
-            CarApp.InitList(cars);
+            CarLot.InitList();
 
             do
             {
@@ -21,19 +19,19 @@ namespace Lab9
                 if(addOrLearn == "add")
                 {
                     Console.WriteLine("Please add a car and its information.");
-                    CarApp.AddListing(cars);
+                    
                 }
                 else if(addOrLearn == "read")
                 {
-                    CarApp.WriteInfo(cars);
-                    int userNum = CarApp.Ask("Which car would you like to know about (enter a number).", cars.Count, $"Please be sure you enter a number between 1 and {cars.Count}");
-                    cars[userNum - 1].PrintInfo();
+                    CarApp.WriteInfo(carLot.Cars);
+                    int userNum = CarApp.Ask("Which car would you like to know about (enter a number).", carLot.Cars.Count, $"Please be sure you enter a number between 1 and {carLot.Cars.Count}");
+                    carLot.Cars[userNum - 1].PrintInfo();
                     Console.WriteLine("Would you like to buy this car? (yes/no)");
                     if(Console.ReadLine() == "yes")
                     {
-                        cars.Remove(cars[userNum - 1]);
+                        carLot.Cars.Remove(carLot.Cars[userNum - 1]);
                     }
-                    CarApp.WriteInfo(cars);
+                    CarApp.WriteInfo(carLot.Cars);
                 }
 
             }
